@@ -240,4 +240,7 @@ def ability_to_mon():
                 print(ability.name)
                 continue
 
+if __name__ == "__main__":
+    ability_to_mon()
+
 
