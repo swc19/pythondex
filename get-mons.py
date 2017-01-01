@@ -120,18 +120,39 @@ def findMove(move):
 
 
 
-def init():
+def init(debug):
     """
     Initializes the program and loads everything into memory.
     :return: None
     """
     print("Initializing... Please wait.")
     first_time = time.clock()
-    load_mons()
-    load_abilities()
-    load_moves()
-    load_items()
-    ability_to_mon()
+    if debug:
+        mon_time = time.clock()
+        load_mons()
+        new_mon = time.clock()
+        print("Mons: " + str(int(new_mon-mon_time)))
+        mon_time = time.clock()
+        load_abilities()
+        new_mon = time.clock()
+        print("Abl: " + str(int(new_mon-mon_time)))
+        mon_time = time.clock()
+        load_moves()
+        new_mon = time.clock()
+        print("Moves: " + str(int(new_mon-mon_time)))
+        mon_time = time.clock()
+        load_items()
+        new_mon = time.clock()
+        print("Items: " + str(int(new_mon-mon_time)))
+        mon_time = time.clock()
+        ability_to_mon()
+        new_mon = time.clock()
+        print("AbilityToMon: " + str(int(new_mon-mon_time)))
+    else:
+        load_abilities()
+        load_moves()
+        load_items()
+        ability_to_mon()
     get_rates()
     get_water_bug()
     done_time = time.clock()
@@ -145,7 +166,7 @@ def main():
     Main Menu, leads the user to various functions of the program.
     :return: None
     """
-    init()
+    init(True)
     while True:
         search = input("Welcome to Pythondex!\n1. Search for Pokemon\n2. Search for Abilities\n"
                        "3. Search for Items\n4. Search for Moves\n5. Catching Simulator\n"

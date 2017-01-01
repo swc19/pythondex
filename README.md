@@ -15,7 +15,11 @@ Author: Scott C. ([swc19](https://github.com/swc19))
     ```
     $ git clone https://github.com/swc19/pythondex.git
     ```
-
+2. BS4 and Requests are also required to be installed.
+    ```
+    $ pip install requests
+    $ pip install beautifulsoup4
+    ```
 *  The main program, `get-mons.py`, serves as a hub to get between different modules of the Dex. Possible abilities are the option to
    search for a Pokémon, Move, Ability, or Item.
 
